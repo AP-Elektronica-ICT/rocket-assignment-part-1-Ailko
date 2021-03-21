@@ -19,23 +19,23 @@ public class Rocketflying : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.LeftArrow))
         {
-            gameObject.GetComponent<Rigidbody>().angularVelocity += new Vector3(0, 0, rotSpeed * Time.deltaTime);
+            gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(0, 0, rotSpeed));
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            gameObject.GetComponent<Rigidbody>().angularVelocity += new Vector3(0, 0, -rotSpeed * Time.deltaTime);
+            gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(0, 0, -rotSpeed));
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            gameObject.GetComponent<Rigidbody>().angularVelocity += new Vector3(rotSpeed * Time.deltaTime, 0, 0);
+            gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(rotSpeed, 0, 0));
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            gameObject.GetComponent<Rigidbody>().angularVelocity += new Vector3(-rotSpeed * Time.deltaTime, 0, 0);
+            gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(-rotSpeed, 0, 0));
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            gameObject.GetComponent<Rigidbody>().velocity += ((transform.GetChild(5).transform.position - transform.position).normalized * thrust) * Time.deltaTime;
+            gameObject.GetComponent<Rigidbody>().AddForce((transform.GetChild(5).transform.position - transform.position).normalized * thrust);
         }
     }
 }

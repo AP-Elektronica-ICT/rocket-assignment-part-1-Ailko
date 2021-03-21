@@ -810,7 +810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1946682022, guid: 21eac97b7ab117b4da24517122ab9ac9, type: 3}
       propertyPath: m_Drag
-      value: 1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1979734548116943751, guid: 21eac97b7ab117b4da24517122ab9ac9, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -908,5 +908,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e85dde8e6986944bf2241fdd8244de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 10
-  thrust: 25
+  rotSpeed: 2.5
+  thrust: 2.5
