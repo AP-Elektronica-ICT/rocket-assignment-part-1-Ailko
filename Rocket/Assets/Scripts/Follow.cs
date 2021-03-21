@@ -9,6 +9,7 @@ public class Follow : MonoBehaviour
     {
         if (target != null)
         {
+            transform.position = target.transform.position + new Vector3(0, -target.transform.position.y + 10, -25);
             transform.LookAt(target);
         }
     }

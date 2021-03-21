@@ -19,23 +19,23 @@ public class Rocketflying : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.RotateAround(transform.position, new Vector3(0, 0, 1), rotSpeed * Time.deltaTime);
+            gameObject.GetComponent<Rigidbody>().angularVelocity += new Vector3(0, 0, rotSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.RotateAround(transform.position, new Vector3(0, 0, 1), -rotSpeed * Time.deltaTime);
+            gameObject.GetComponent<Rigidbody>().angularVelocity += new Vector3(0, 0, -rotSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.RotateAround(transform.position, new Vector3(1, 0, 0), rotSpeed * Time.deltaTime);
+            gameObject.GetComponent<Rigidbody>().angularVelocity += new Vector3(rotSpeed * Time.deltaTime, 0, 0);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.RotateAround(transform.position, new Vector3(1, 0, 0), -rotSpeed * Time.deltaTime);
+            gameObject.GetComponent<Rigidbody>().angularVelocity += new Vector3(-rotSpeed * Time.deltaTime, 0, 0);
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            transform.position += (gameObject.GetComponent<Rigidbody>().velocity + ((transform.GetChild(5).transform.position - transform.position).normalized * thrust)) * Time.deltaTime;
+            gameObject.GetComponent<Rigidbody>().velocity += ((transform.GetChild(5).transform.position - transform.position).normalized * thrust) * Time.deltaTime;
         }
     }
 }
